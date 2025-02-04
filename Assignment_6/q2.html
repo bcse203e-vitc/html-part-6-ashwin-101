@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Find Largest Number</title>
+</head>
+<body>
+    <h1>Find the Largest Number</h1>
+    
+    <h2>Among N Numbers</h2>
+    <label for="numbers">Enter numbers separated by commas:</label>
+    <input type="text" id="numbers">
+    <br>
+    <button onclick="findLargestOfN()">Find Largest</button>
+    <p id="largestN"></p>
+
+    <script>
+        function findLargestOfN() {
+            let numbers = document.getElementById('numbers').value.split(',').map(Number);
+            let largest = Math.max(...numbers);
+            document.getElementById('largestN').innerText = `The largest number is: ${largest}`;
+        }
+    </script>
+</body>
+</html>
