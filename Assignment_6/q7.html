@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Fibonacci Sequence Generator</title>
+    <script>
+        function generateFibonacci() {
+            let n = parseInt(document.getElementById('number').value);
+            let fibonacci = [0, 1];
+            for (let i = 2; i < n; i++) {
+                fibonacci.push(fibonacci[i - 1] + fibonacci[i - 2]);
+            }
+            document.getElementById('fibonacciResult').innerText = `First ${n} Fibonacci numbers: ${fibonacci.slice(0, n).join(', ')}`;
+        }
+    </script>
+</head>
+<body>
+    <h1>Fibonacci Sequence Generator</h1>
+    
+    <label for="number">Enter the value of N:</label>
+    <input type="number" id="number">
+    <br>
+    <button onclick="generateFibonacci()">Generate</button>
+    <p id="fibonacciResult"></p>
+
+   
+</body>
+</html>
