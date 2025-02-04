@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Even or Odd Checker</title>
+    
+    <script>
+        function isEvenOrOdd(num) {
+            return num % 2 === 0 ? 'Even' : 'Odd';
+        }
+
+        function checkEvenOrOdd() {
+            let num = parseFloat(document.getElementById('number').value);
+            let result = isEvenOrOdd(num);
+            document.getElementById('evenOddResult').innerText = `The number is: ${result}`;
+        }
+    </script>
+</head>
+<body>
+    <h1>Even or Odd Checker</h1>
+    
+    <h2>Check if a Number is Even or Odd</h2>
+    <label for="number">Enter a number:</label>
+    <input type="number" id="number">
+    <br>
+    <button onclick="checkEvenOrOdd()">Check</button>
+    <p id="evenOddResult"></p>
+   
+</body>
+</html>
