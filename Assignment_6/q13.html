@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Second Smallest and Second Largest Finder</title>
+    <script>
+        function findSecondSmallestAndLargest() {
+            let input = document.getElementById('inputArray').value;
+            let array = input.split(',').map(Number);
+            if (array.length < 2) {
+                document.getElementById('result').innerText = "Array must contain at least two elements.";
+                return;
+            }
+            array.sort((a, b) => a - b);
+            let uniqueArray = [...new Set(array)];
+            if (uniqueArray.length < 2) {
+                document.getElementById('result').innerText = "Array must contain at least two unique elements.";
+                return;
+            }
+            let secondSmallest = uniqueArray[1];
+            let secondLargest = uniqueArray[uniqueArray.length - 2];
+            document.getElementById('result').innerText = `Second Smallest: ${secondSmallest}, Second Largest: ${secondLargest}`;
+        }
+    </script>
+</head>
+<body>
+    <h1>Second Smallest and Second Largest Finder</h1>
+    
+    <label for="inputArray">Enter an array (comma-separated):</label>
+    <input type="text" id="inputArray">
+    <br>
+    <button onclick="findSecondSmallestAndLargest()">Find</button>
+    <p id="result"></p>
+
+   
+</body>
+</html>
